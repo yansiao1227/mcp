@@ -1,5 +1,5 @@
 {
-  "name": "@block/image-processor",
+  "name": "image-processor-ysa",
   "version": "1.0.0",
   "description": "A MCP server for image",
   "type": "module",
