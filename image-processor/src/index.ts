@@ -1,5 +1,6 @@
 import {
   CallToolRequestSchema,
+  ListToolsRequestSchema,
   ToolSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import path from "path";
@@ -7,8 +8,8 @@ import { z } from "zod";
 import os from "os";
 import fs from "fs/promises";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { zodToJsonSchema } from "zod-to-json-schema";
 
 const ToolInputSchema = ToolSchema.shape.inputSchema;
 type ToolInput = z.infer<typeof ToolInputSchema>;
@@ -64,7 +65,17 @@ const server = new Server(
     },
   }
 );
-
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+  return {
+    tools: [
+      {
+        name: "read-image",
+        description: "Read an image from the filesystem",
+        inputSchema: zodToJsonSchema(ReadImageArgsSchema) as ToolInput,
+      },
+    ],
+  };
+});
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
