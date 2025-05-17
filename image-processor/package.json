@@ -1,10 +1,10 @@
 {
-  "name": "image-processor-ysa",
-  "version": "1.0.1",
+  "name": "@yansiao/image-processor",
+  "version": "1.0.0",
   "description": "A MCP server for image",
   "type": "module",
   "bin": {
-    "image-processor-ysa": "./build/index.js"
+    "image-processor": "./build/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -35,6 +35,6 @@
     "mcp",
     "image"
   ],
-  "author": "",
+  "author": "yansiao",
   "license": "ISC"
 }
