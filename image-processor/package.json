@@ -1,10 +1,10 @@
 {
   "name": "image-processor-ysa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A MCP server for image",
   "type": "module",
   "bin": {
-    "image-processor": "./build/index.js"
+    "image-processor-ysa": "./build/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -18,6 +18,7 @@
     "axios": "^1.7.9",
     "form-data": "^4.0.1",
     "fs": "^0.0.1-security",
+    "nrm": "^2.0.1",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "zod": "^3.24.1",
