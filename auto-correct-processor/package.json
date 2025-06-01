@@ -1,0 +1,28 @@
+{
+  "name": "auto-correct-processor",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "image-auto-correct-processor": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "build"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jimp": "^1.6.0",
+    "selenium-webdriver": "^4.33.0",
+    "tesseract.js": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/selenium-webdriver": "^4.1.28",
+    "typescript": "^5.7.2"
+  }
+}
