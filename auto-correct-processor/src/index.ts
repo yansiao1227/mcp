@@ -22,7 +22,7 @@ async function run() {
     console.log("验证码图片已保存到文件");
 
     // 使用OCR识别验证码(效果不佳)
-    // recognizeCaptcha("verifyCanvas/verifyCanvas.png");
+    recognizeCaptcha("verifyCanvas/verifyCanvas.png");
     // 使用大模型
     
     // 抓取页面的部分内容
