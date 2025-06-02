@@ -26,7 +26,7 @@ export const recognizeCaptchaByTesseract = async (inputPath: string) => {
     // logger: (m: any) => console.log(m),
     // errorHandler: (err: any) => console.log("[error:]", err),
     // // 使用离线训练数据
-    // langPath: path.resolve(__dirname, "../../tessdata"),
+    // langPath: path.resolve(__dirname, "../../data/tessdata"),
   });
   await worker.load();
   await worker.setParameters({
@@ -40,7 +40,7 @@ export const recognizeCaptchaByTesseract = async (inputPath: string) => {
     data: { text },
   } = await worker.recognize(image);
   await worker.terminate();
-  return text
+  return text;
 };
 
 // ddddocr识别验证码函数，效果较好
